@@ -1,3 +1,3 @@
 interface:
-  display_name: "Design System"
+  display_name: "Agentic Design System"
   short_description: "Agentが参照して育てるDesign Systemを作り、それに沿ってUIを作る"

@@ -1,5 +1,5 @@
 ---
-name: design-system
+name: agentic-design-system
 description: プロダクトのUIを作るAgentが参照し、プロダクトと一緒に変えていくDesign Systemを扱う。リポジトリにDesign Systemがなければ新しく作り（DTCGのToken、層の参照規則、lintを備えた構造と、プロダクトに合わせたDesign Principles・Token・Foundation）、あればそれに沿ってUIを作る、足りない定義を足す、定義の状態を見直す。
 ---
 

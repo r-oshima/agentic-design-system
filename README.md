@@ -1,4 +1,4 @@
-# design-system-skill
+# agentic-design-system
 
 プロダクトのUIを作るAgentが参照し、プロダクトと一緒に変えていくDesign Systemを、作って運用するためのSkill。Claude CodeとCodexで使える。
 
@@ -14,7 +14,7 @@ AgentにUIを作らせると、画面ごとに色や余白の値が少しずつ�
 - **Design Systemに沿ってUIを作る。** 足りない定義は、規則に従ってDesign Systemに足す。画面へのフィードバックを定義に反映する手順、Tokenの状態（experimental / stable / deprecated）の見直しもある。
 - **Skillがなくても運用できる。** 作ったDesign Systemは、README、ARCHITECTURE、CONTRIBUTING、lintだけで運用が完結する。Skillは作るための雛形で、作ったあとに更新を配ることはしない。
 
-使い方の詳細は[SKILL.md](skills/design-system/SKILL.md)にある。このSkill自体を改善する場合は[MAINTAINING.md](skills/design-system/MAINTAINING.md)に従う。
+使い方の詳細は[SKILL.md](skills/agentic-design-system/SKILL.md)にある。このSkill自体を改善する場合は[MAINTAINING.md](skills/agentic-design-system/MAINTAINING.md)に従う。
 
 ## 作られるもの
 
@@ -43,12 +43,12 @@ docs/design-system/
 
 ## 入れ方
 
-以下の`r-oshima/design-system-skill`は、公開先のリポジトリ名である。
+以下の`r-oshima/agentic-design-system`は、公開先のリポジトリ名である。
 
 ### npx
 
 ```sh
-npx skills add r-oshima/design-system-skill
+npx skills add r-oshima/agentic-design-system
 ```
 
 入れる先のAgentは`--agent claude-code`や`--agent codex`で選ぶ。ユーザー単位で入れる場合は`--global`を付ける。
@@ -56,33 +56,35 @@ npx skills add r-oshima/design-system-skill
 ### Claude Code（プラグイン）
 
 ```
-/plugin marketplace add r-oshima/design-system-skill
-/plugin install design-system@design-system-skill
+/plugin marketplace add r-oshima/agentic-design-system
+/plugin install agentic-design-system@agentic-design-system
 ```
+
+プラグインで入れた場合、Skillの呼び出しは`/agentic-design-system:agentic-design-system`の形になる（`プラグイン名:Skill名`）。
 
 ### Codex
 
 Codexの中で、次のように頼む。入れたあとはCodexを再起動する。
 
 ```
-$skill-installer install https://github.com/r-oshima/design-system-skill/tree/main/skills/design-system
+$skill-installer install https://github.com/r-oshima/agentic-design-system/tree/main/skills/agentic-design-system
 ```
 
 ### 手動
 
-cloneして、`skills/design-system`をAgentのskillsフォルダへコピーするか、リンクを張る。リンクなら、更新は`git pull`だけで済む。
+cloneして、`skills/agentic-design-system`をAgentのskillsフォルダへコピーするか、リンクを張る。リンクなら、更新は`git pull`だけで済む。
 
 ```sh
-git clone https://github.com/r-oshima/design-system-skill ~/design-system-skill
+git clone https://github.com/r-oshima/agentic-design-system ~/agentic-design-system
 
 # Claude Code
-ln -s ~/design-system-skill/skills/design-system ~/.claude/skills/design-system
+ln -s ~/agentic-design-system/skills/agentic-design-system ~/.claude/skills/agentic-design-system
 
 # Codex
-ln -s ~/design-system-skill/skills/design-system ~/.agents/skills/design-system
+ln -s ~/agentic-design-system/skills/agentic-design-system ~/.agents/skills/agentic-design-system
 ```
 
-Skillの置き場所は、ツールの版によって変わることがある。入れたあと、`/design-system`（Claude Code）や`/skills`（Codex）で見えることを確かめる。プロジェクトだけで使う場合は、プロジェクトの`.claude/skills/`や`.agents/skills/`に同じようにする。
+Skillの置き場所は、ツールの版によって変わることがある。入れたあと、`/agentic-design-system`（Claude Code）や`/skills`（Codex）で見えることを確かめる。プロジェクトだけで使う場合は、プロジェクトの`.claude/skills/`や`.agents/skills/`に同じようにする。
 
 ## 使い方
 
