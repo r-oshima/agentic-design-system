@@ -43,48 +43,34 @@ docs/design-system/
 
 ## 入れ方
 
-以下の`r-oshima/agentic-design-system`は、公開先のリポジトリ名である。
-
-### npx
+**npx**
 
 ```sh
 npx skills add r-oshima/agentic-design-system
 ```
 
-入れる先のAgentは`--agent claude-code`や`--agent codex`で選ぶ。ユーザー単位で入れる場合は`--global`を付ける。
-
-### Claude Code（プラグイン）
+**Claude Code（プラグイン）**
 
 ```
 /plugin marketplace add r-oshima/agentic-design-system
 /plugin install agentic-design-system@agentic-design-system
+
+# 呼び出しは /agentic-design-system:agentic-design-system
 ```
 
-プラグインで入れた場合、Skillの呼び出しは`/agentic-design-system:agentic-design-system`の形になる（`プラグイン名:Skill名`）。
-
-### Codex
-
-Codexの中で、次のように頼む。入れたあとはCodexを再起動する。
+**Codex**
 
 ```
 $skill-installer install https://github.com/r-oshima/agentic-design-system/tree/main/skills/agentic-design-system
 ```
 
-### 手動
-
-cloneして、`skills/agentic-design-system`をAgentのskillsフォルダへコピーするか、リンクを張る。リンクなら、更新は`git pull`だけで済む。
+**手動**
 
 ```sh
 git clone https://github.com/r-oshima/agentic-design-system ~/agentic-design-system
-
-# Claude Code
-ln -s ~/agentic-design-system/skills/agentic-design-system ~/.claude/skills/agentic-design-system
-
-# Codex
-ln -s ~/agentic-design-system/skills/agentic-design-system ~/.agents/skills/agentic-design-system
+ln -s ~/agentic-design-system/skills/agentic-design-system ~/.claude/skills/agentic-design-system  # Claude Code
+ln -s ~/agentic-design-system/skills/agentic-design-system ~/.agents/skills/agentic-design-system  # Codex
 ```
-
-Skillの置き場所は、ツールの版によって変わることがある。入れたあと、`/agentic-design-system`（Claude Code）や`/skills`（Codex）で見えることを確かめる。プロジェクトだけで使う場合は、プロジェクトの`.claude/skills/`や`.agents/skills/`に同じようにする。
 
 ## 使い方
 
