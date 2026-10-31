@@ -1,0 +1,6 @@
+{
+  "name": "design-system",
+  "version": "0.1.0",
+  "description": "プロダクトのUIを作るAgentが参照し、プロダクトと一緒に変えていくDesign Systemを作り、運用するSkill",
+  "author": { "name": "r-oshima" }
+}
